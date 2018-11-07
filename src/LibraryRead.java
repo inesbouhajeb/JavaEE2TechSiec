@@ -1,20 +1,29 @@
 /*
-Wczytujje od użytkownika numer isbn ksiazki i wczytuje na tej podstawie ksiazke z bazy danych oraz wyswietla o niej informacje w konsoli.
+Class designed to read book id from user and then show all information about this book in console.
  */
 
 import java.util.Scanner;
 
 public class LibraryRead {
 
-    public static void run() {
+    private static int id;
+
+    public static void run(BookDao bookDao) {
         Book book;
-        BookDao dao=new BookDao();
         Scanner scanner=new Scanner(System.in);
         System.out.println("Podaj id ksiazki:");
-        int id=Integer.valueOf(scanner.nextLine());
-
-        book=dao.read(id);
-        System.out.println(book);
-        dao.close();
+        try{
+            id=Integer.valueOf(scanner.nextLine());
+            book=bookDao.read(id);
+            if(book==null){
+                System.out.println("Brak książki o podanym id.");
+            }
+            else {
+                System.out.println(book+"id="+id);
+            }
+        }
+        catch (NumberFormatException e){
+            System.out.println("Zły format id! Podaj wartość numeryczną całkowitą!");
+        }
     }
 }

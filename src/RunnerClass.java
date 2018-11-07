@@ -2,7 +2,10 @@ import java.util.Scanner;
 
 public class RunnerClass {
 
+    private static BookDao bookDao;
+
     public static void main(String[] args) {
+        bookDao=new BookDao();
         Scanner scanner=new Scanner(System.in);
 
         while(true) {
@@ -11,19 +14,19 @@ public class RunnerClass {
             scanner.nextLine();
                 switch (readed) {
                     case "1":
-                        LibrarySave.run();
+                        LibrarySave.run(bookDao);
                         break;
                     case "2":
-                        LibraryRead.run();
+                        LibraryRead.run(bookDao);
                         break;
                     case "3":
-                        LibraryDelete.run();
+                        LibraryDelete.run(bookDao);
                         break;
                     case "4":
-                        LibraryUpdate.run();
+                        LibraryUpdate.run(bookDao);
                         break;
                     case "5":
-                        LibraryReadAll.run();
+                        LibraryReadAll.run(bookDao);
                         break;
                     default:
                         break;

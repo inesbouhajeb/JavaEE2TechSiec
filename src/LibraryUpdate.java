@@ -2,9 +2,8 @@ import java.util.Scanner;
 
 public class LibraryUpdate {
 
-    public static void run() {
+    public static void run(BookDao dao) {
         Scanner scanner=new Scanner(System.in);
-        BookDao dao=new BookDao();
 
         System.out.println("Podaj id ksiazki ktora chcesz zaktualizowac:");
         int id=Integer.valueOf(scanner.next());
@@ -56,6 +55,5 @@ public class LibraryUpdate {
                 System.out.println("Zaktualizowano poprawnie");
             }
         }
-        dao.close();
     }
 }

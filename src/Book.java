@@ -1,8 +1,3 @@
-
-/*
-Klasa odpowiada tabeli z bazy danych.
- */
-
 public class Book {
 
     private int id;
@@ -11,11 +6,10 @@ public class Book {
     private int year;
     private String isbn;
 
-    public Book() {
-    }
+    public Book() {}
 
     public Book(String title, String author, int year, String isbn) {
-        this.id = id;
+        //this.id=id;
         this.title = title;
         this.author = author;
         this.year = year;

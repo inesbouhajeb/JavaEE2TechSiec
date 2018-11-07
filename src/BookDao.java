@@ -1,8 +1,3 @@
-
-/*
-Klasa pośrednicząca pomiędzy bazą danych a aplikacją.
- */
-
 import java.sql.*;
 
 public class BookDao {
@@ -84,7 +79,6 @@ public class BookDao {
             System.out.println("Could not update record");
             e.printStackTrace();
         }
-
     }
 
     public void delete(int id){
